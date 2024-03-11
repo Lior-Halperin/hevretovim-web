@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled, { ThemeProvider,DefaultTheme } from "styled-components";
+import GlobalStyle from "./Theme/globalStyle";
+import lightTheme from "./Theme/lightTheme";
+import darkTheme from "./Theme/darkTheme";
 
 function App() {
+  const [theme, setTheme] = React.useState<DefaultTheme>(darkTheme);
+
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
+  const ThemedParagraph = styled.p`
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
+    padding: 20px;
+  `;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle/>
+      <div className="App">
+        <button onClick={toggleTheme}>Toggle Theme</button>
+      </div>
+    </ThemeProvider>
   );
 }
 
