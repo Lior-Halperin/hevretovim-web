@@ -1,12 +1,9 @@
+import StyledWrapper from "./Splash.styled";
 
-import StyledWrapper from './Splash.styled';
 function Splash(): JSX.Element {
-
-    return (
-        <div className="Splash" >
-            <StyledWrapper bgColor="#28a745">Splash Screen</StyledWrapper>
-        </div>
-    );
+  return (
+      <StyledWrapper className="Splash" bgColor="#28a745">Splash Screen</StyledWrapper>
+  );
 }
 
 export default Splash;

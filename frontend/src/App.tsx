@@ -1,8 +1,11 @@
 import React from "react";
-import styled, { ThemeProvider,DefaultTheme } from "styled-components";
+import { ThemeProvider, DefaultTheme } from "styled-components";
 import GlobalStyle from "./Theme/globalStyle";
 import lightTheme from "./Theme/lightTheme";
 import darkTheme from "./Theme/darkTheme";
+import Header from "./Components/Header/Header";
+import Routing from "./Components/Routing";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [theme, setTheme] = React.useState<DefaultTheme>(darkTheme);
@@ -11,17 +14,22 @@ function App() {
     setTheme(theme === lightTheme ? darkTheme : lightTheme);
   };
 
-  const ThemedParagraph = styled.p`
-    background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
-    padding: 20px;
-  `;
-
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle/>
+      <GlobalStyle />
       <div className="App">
-        <button onClick={toggleTheme}>Toggle Theme</button>
+        <header>
+          <button onClick={toggleTheme}>Toggle Theme</button>
+          <Header />
+        </header>
+
+        <main>
+          <Routing />
+        </main>
+
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </ThemeProvider>
   );
