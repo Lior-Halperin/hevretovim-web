@@ -1,4 +1,3 @@
-import { DefaultTheme } from "styled-components";
 
 const baseTheme = { 
   fonts: {

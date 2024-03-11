@@ -6,8 +6,9 @@ import darkTheme from "./Theme/darkTheme";
 import Header from "./Components/Header/Header";
 import Routing from "./Components/Routing";
 import Footer from "./Components/Footer/Footer";
+import Splash from "./Views/Splash/Splash";
 
-function App() {
+function App(): JSX.Element {
   const [theme, setTheme] = React.useState<DefaultTheme>(darkTheme);
 
   const toggleTheme = () => {
@@ -17,7 +18,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div className="App">
+      <div className="App" style={{display:"flex", borderColor:'ActiveBorder',borderBottomWidth:1}}>
+        <Splash/>
         <header>
           <button onClick={toggleTheme}>Toggle Theme</button>
           <Header />
