@@ -1,12 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    display: flex;
-    font-size: '100px';
+  * {
+    /* background-color: #FF8E8F; */
+    font-size: 1rem;
     margin: 0;
     padding: 0;
   }
-`
+`;
 
 export default GlobalStyle;
