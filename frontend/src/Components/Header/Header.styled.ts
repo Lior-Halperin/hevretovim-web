@@ -29,7 +29,7 @@ export const StyledImg = styled.img<Partial<StyledPropsI>>`
   position: relative;
   animation: ${(props) =>
       getSlidingInImageAnimation(props.directionSlide || "left")}
-       ${(props)=>props.animationDelay}s ease-in-out;
+    ${(props) => props.animationDelay}s ease-in-out;
 `;
 
 export const StyledTextContainer = styled.div`
@@ -38,8 +38,23 @@ export const StyledTextContainer = styled.div`
   width: 33.33%;
   justify-content: center;
   align-items: center;
+  border: 2px solid green;
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
-export const StyledTitle = styled.h1``;
+export const StyledTitle = styled.h1`
+  margin: 1rem 0;
+  color: ${(props) => props.theme.colors.text};
+`;
 
-export const StyledParagraph = styled.p``;
+export const StyledParagraph = styled.p`
+  text-align: center;
+  color: ${(props) => props.theme.colors.text};
+`;
+
+export const StyledButtonContainer = styled.div`
+   display: flex ;
+   width: 100%;
+   justify-content: center;
+   background-color: rebeccapurple;
+`;
