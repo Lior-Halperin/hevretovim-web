@@ -1,4 +1,3 @@
-
 const baseTheme = { 
   fonts: {
     primary: 'Helvetica, Arial, sans-serif',

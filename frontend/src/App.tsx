@@ -9,7 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import Splash from "./Views/Splash/Splash";
 
 function App(): JSX.Element {
-  const [theme, setTheme] = React.useState<DefaultTheme>(darkTheme);
+  const [theme, setTheme] = React.useState<DefaultTheme>(lightTheme);
 
   const toggleTheme = () => {
     setTheme(theme === lightTheme ? darkTheme : lightTheme);
@@ -18,8 +18,8 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div className="App" style={{display:"flex", borderColor:'ActiveBorder',borderBottomWidth:1}}>
-        <Splash/>
+      <div className="App">
+        {/* <Splash/> */}
         <header>
           <button onClick={toggleTheme}>Toggle Theme</button>
           <Header />
