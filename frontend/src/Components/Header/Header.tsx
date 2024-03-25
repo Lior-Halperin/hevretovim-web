@@ -19,10 +19,20 @@ function Header(): JSX.Element {
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
+const navLinks  = [
+    {path:'/',namePage:'Home'},
+    {path:'/about',namePage:'About'},
+    {path:'/certificates',namePage:'Certificates'},
+    {path:'/contact',namePage:'Contact'},
+    {path:'/admin',namePage:'Meet The Team'},
+    {path:'/volunteering',namePage:'Volunteering'},
+    {path:'/admin',namePage:'Admin'},
+
+]
 
   return (
     <StyledWrapper className="Header">
-      <NavBar />
+      <NavBar links={navLinks }/>
       <StyledContainer>
         <StyledImg
           src={imgLeft}
